@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_green"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:paddingHorizontal="24dp">
+
+
+
+    <FrameLayout
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="40dp"
+        android:gravity="center"
+        android:background="@drawable/rounded_frame_bg">
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:contentDescription="warranty_safe"
+            android:src="@drawable/ic_shield" />
+    </FrameLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="Warranty Safe"
+        android:textColor="@color/white"
+        android:textSize="32sp"
+        android:textStyle="bold" />
+
+    <!--- Description -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="60dp"
+        android:gravity="center"
+        android:lineSpacingExtra="4dp"
+        android:text="Keep all your warranty cards safe, organized, and always accessible in one place."
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/btn_get_started"
+        android:layout_width="280dp"
+        android:layout_height="56dp"
+        android:text="get_started"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/dark_green"
+        android:backgroundTint="@color/white"
+        app:cornerRadius="28dp"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/btn_already_have_account"
+        android:layout_width="280dp"
+        android:layout_height="56dp"
+        android:text="Already Have Account"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/light_green"
+        app:cornerRadius="28dp"
+        android:layout_marginBottom="16dp"/>
+
+
+
+</LinearLayout>
