@@ -1,13 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Material Theme Colors -->
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="dark_green">#1B5E45</color>
-    <color name="medium_green">#2A7D5F</color>
-    <color name="light_green">#4A9B75</color>
+
+    <!-- Base Colors -->
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+
+    <!-- Primary Green Palette -->
+    <color name="dark_green">#1B5E3F</color>
+    <color name="medium_green">#2A8B5F</color>
+    <color name="light_green">#E8F5E9</color>
+    <color name="primary_green">#1B7F4E</color>
+    <color name="primary_green_dark">#155D3A</color>
+
+    <!-- Background Colors -->
+    <color name="light_gray">#F8F9FA</color>
+    <color name="light_gray_2">#F5F5F5</color>
+    <color name="card_background">#FFFFFF</color>
+    <color name="input_background">#FAFBFC</color>
+
+    <!-- Text Colors -->
+    <color name="gray_text">#6B7280</color>
+    <color name="gray_text_light">#9CA3AF</color>
+    <color name="text_primary">#1F2937</color>
+    <color name="text_secondary">#4B5563</color>
+
+    <!-- Accent Colors -->
+    <color name="yellow">#F59E0B</color>
+    <color name="yellow_light">#FEF3C7</color>
+    <color name="blue">#3B82F6</color>
+    <color name="red">#EF4444</color>
+
+    <!-- Border Colors -->
+    <color name="border_light">#E5E7EB</color>
+    <color name="border_medium">#D1D5DB</color>
+    <color name="border_dashed">#CBD5E0</color>
+
+    <!-- Upload Section -->
+    <color name="upload_bg">#F9FAFB</color>
+    <color name="upload_border">#CBD5E0</color>
+
+    <!-- Chip Colors -->
+    <color name="chip_background_color">#FFFFFF</color>
 </resources>
