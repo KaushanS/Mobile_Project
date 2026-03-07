@@ -11,6 +11,14 @@ public class WarrantyDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_warranty_detail);
 
+        // Edit button
+        findViewById(R.id.btnEdit).setOnClickListener(v -> {
+            Intent intent = new Intent(this, EditWarrantyActivity.class);
+            startActivity(intent);
+        });
 
+        findViewById(R.id.btnDelete).setOnClickListener(v -> {
+            finish();
+        });
     }
 }

@@ -10,6 +10,7 @@ public class EditWarrantyActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_warranty);
 
-
+        findViewById(R.id.btnSaveChanges).setOnClickListener(v -> finish());
+        findViewById(R.id.btnCancel).setOnClickListener(v -> finish());
     }
 }
