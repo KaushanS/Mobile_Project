@@ -10,6 +10,6 @@ public class ResetEmailSentActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reset_email_sent);
 
-
+        findViewById(R.id.btnBackToLogin).setOnClickListener(v -> finish());
     }
 }
