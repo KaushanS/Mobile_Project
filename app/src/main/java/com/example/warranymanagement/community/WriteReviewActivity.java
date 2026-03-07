@@ -10,6 +10,6 @@ public class WriteReviewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_write_review);
 
-
+        findViewById(R.id.btnPostReview).setOnClickListener(v -> finish());
     }
 }

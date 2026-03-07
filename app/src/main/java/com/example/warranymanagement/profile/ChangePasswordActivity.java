@@ -10,6 +10,6 @@ public class ChangePasswordActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_change_password);
 
-
+        findViewById(R.id.btnUpdatePassword).setOnClickListener(v -> finish());
     }
 }

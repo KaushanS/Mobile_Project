@@ -16,5 +16,41 @@ public class CommunityActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_community);
 
+        findViewById(R.id.fabWriteReview).setOnClickListener(v -> {
+            Intent intent = new Intent(this, WriteReviewActivity.class);
+            startActivity(intent);
+        });
+
+        findViewById(R.id.AddWarranty).setOnClickListener(v -> {
+            Intent intent = new Intent(this, AddWarrantyActivity.class);
+            startActivity(intent);
+        });
+
+        BottomNavigationView navView = findViewById(R.id.bottomNavigationView);
+        navView.setSelectedItemId(R.id.nav_community);
+        navView.setOnItemSelectedListener(item -> {
+            int itemId = item.getItemId();
+
+            if (itemId == R.id.nav_home) {
+                Intent intent = new Intent(this, HomeActivity.class);
+                startActivity(intent);
+                return true;
+
+            } else if (itemId == R.id.nav_mine) {
+                Intent intent = new Intent(this, WarrantyListActivity.class);
+                startActivity(intent);
+                return true;
+
+            } else if (itemId == R.id.nav_community) {
+                return true;
+
+            } else if (itemId == R.id.nav_settings) {
+                Intent intent = new Intent(this, SettingsActivity.class);
+                startActivity(intent);
+                return true;
+            }
+
+            return false;
+        });
     }
 }
