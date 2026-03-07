@@ -262,16 +262,6 @@
                 app:tint="#BDBDBD" />
         </LinearLayout>
 
-        <!-- Warranty List -->
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvWarranties"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="12dp"
-            android:paddingHorizontal="24dp"
-            android:clipToPadding="false"
-            android:paddingBottom="100dp" />
-
     </LinearLayout>
 
 
