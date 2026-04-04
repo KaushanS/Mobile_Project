@@ -150,8 +150,8 @@ public class HomeActivity extends AppCompatActivity {
                         total++;
 
                         String warrantyId = doc.getId();
-                        String expiryDateString = doc.getString("expiryDate"); // yyyy-MM-dd
-                        String productName = doc.getString("productName"); // adjust if your field name is different
+                        String expiryDateString = doc.getString("expiryDate");
+                        String productName = doc.getString("productName");
                         String storeName = doc.getString("storeName");
                         String category = doc.getString("category");
 

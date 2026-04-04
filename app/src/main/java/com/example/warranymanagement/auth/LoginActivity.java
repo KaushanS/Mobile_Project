@@ -41,11 +41,6 @@ public class LoginActivity extends AppCompatActivity {
             Intent intent = new Intent(this, ForgotPasswordActivity.class);
             startActivity(intent);
         });
-
-        findViewById(R.id.btnGoogleSignIn).setOnClickListener(v -> {
-            Intent intent = new Intent(this, HomeActivity.class);
-            startActivity(intent);
-        });
     }
 
     private void loginUser() {

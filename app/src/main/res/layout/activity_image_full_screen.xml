@@ -12,3 +12,4 @@
         android:scaleType="fitCenter"
         android:contentDescription="Full screen warranty image" />
 </LinearLayout>
+

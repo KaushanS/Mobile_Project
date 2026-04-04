@@ -311,7 +311,7 @@
         </androidx.core.widget.NestedScrollView>
     </LinearLayout>
 
-    <!--  Navigation Bar I -->
+    <!--  Navigation Bar -->
     <include
         android:id="@+id/layout_bottom_nav"
         layout="@layout/layout_bottom_nav"

@@ -1,23 +1,18 @@
 package com.example.warranymanagement.profile;
 
 import android.os.Bundle;
-import android.text.TextUtils;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.warranymanagement.R;
 import com.example.warranymanagement.notifications.NotificationPublisher;
-import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class ChangePasswordActivity extends AppCompatActivity {
 
-    private EditText etCurrentPassword;
-    private EditText etNewPassword;
-    private EditText etConfirmNewPassword;
+    private FirebaseAuth auth;
     private FirebaseUser currentUser;
 
     @Override
@@ -25,79 +20,33 @@ public class ChangePasswordActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_change_password);
 
-        currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        auth = FirebaseAuth.getInstance();
+        currentUser = auth.getCurrentUser();
 
-        etCurrentPassword = findViewById(R.id.etCurrentPassword);
-        etNewPassword = findViewById(R.id.etNewPassword);
-        etConfirmNewPassword = findViewById(R.id.etConfirmNewPassword);
-
-        findViewById(R.id.btnUpdatePassword).setOnClickListener(v -> updatePassword());
+        findViewById(R.id.btnUpdatePassword).setOnClickListener(v -> sendResetEmail());
     }
 
-    private void updatePassword() {
-        if (currentUser == null || currentUser.getEmail() == null) {
+    private void sendResetEmail() {
+        if (currentUser == null || currentUser.getEmail() == null || currentUser.getEmail().trim().isEmpty()) {
             Toast.makeText(this, "Please login again", Toast.LENGTH_SHORT).show();
             finish();
             return;
         }
 
-        String currentPassword = etCurrentPassword.getText().toString().trim();
-        String newPassword = etNewPassword.getText().toString().trim();
-        String confirmPassword = etConfirmNewPassword.getText().toString().trim();
+        String email = currentUser.getEmail().trim();
 
-        if (TextUtils.isEmpty(currentPassword)) {
-            etCurrentPassword.setError("Current password is required");
-            etCurrentPassword.requestFocus();
-            return;
-        }
-
-        if (TextUtils.isEmpty(newPassword)) {
-            etNewPassword.setError("New password is required");
-            etNewPassword.requestFocus();
-            return;
-        }
-
-        if (newPassword.length() < 6) {
-            etNewPassword.setError("Password must be at least 6 characters");
-            etNewPassword.requestFocus();
-            return;
-        }
-
-        if (TextUtils.isEmpty(confirmPassword)) {
-            etConfirmNewPassword.setError("Confirm password is required");
-            etConfirmNewPassword.requestFocus();
-            return;
-        }
-
-        if (!newPassword.equals(confirmPassword)) {
-            etConfirmNewPassword.setError("Passwords do not match");
-            etConfirmNewPassword.requestFocus();
-            return;
-        }
-
-        if (newPassword.equals(currentPassword)) {
-            etNewPassword.setError("New password must be different");
-            etNewPassword.requestFocus();
-            return;
-        }
-
-        currentUser.reauthenticate(
-                        EmailAuthProvider.getCredential(currentUser.getEmail(), currentPassword))
-                .addOnSuccessListener(unused ->
-                        currentUser.updatePassword(newPassword)
-                                .addOnSuccessListener(unused2 -> {
-                                    NotificationPublisher.publishToUser(
-                                            currentUser.getUid(),
-                                            "password",
-                                            "Password Changed",
-                                            "Your password was changed successfully"
-                                    );
-                                    Toast.makeText(this, "Password updated successfully", Toast.LENGTH_SHORT).show();
-                                    finish();
-                                })
-                                .addOnFailureListener(e ->
-                                        Toast.makeText(this, "Failed to update password", Toast.LENGTH_SHORT).show()))
+        auth.sendPasswordResetEmail(email)
+                .addOnSuccessListener(unused -> {
+                    NotificationPublisher.publishToUser(
+                            currentUser.getUid(),
+                            "password",
+                            "Password Reset Link Sent",
+                            "Password reset link sent to " + email
+                    );
+                    Toast.makeText(this, "Password reset email sent", Toast.LENGTH_LONG).show();
+                    finish();
+                })
                 .addOnFailureListener(e ->
-                        Toast.makeText(this, "Current password is incorrect", Toast.LENGTH_SHORT).show());
+                        Toast.makeText(this, "Failed to send reset email", Toast.LENGTH_SHORT).show());
     }
 }

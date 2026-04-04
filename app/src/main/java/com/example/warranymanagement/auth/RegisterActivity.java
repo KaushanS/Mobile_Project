@@ -32,11 +32,6 @@ public class RegisterActivity extends AppCompatActivity {
 
         findViewById(R.id.btnRegister).setOnClickListener(v -> registerUser());
 
-
-        findViewById(R.id.btnGoogleSignIn).setOnClickListener(v -> {
-            startActivity(new Intent(this, LoginActivity.class));
-            finishAffinity();
-        });
     }
 
     private void registerUser() {

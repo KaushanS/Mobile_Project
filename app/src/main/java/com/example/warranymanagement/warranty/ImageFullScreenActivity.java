@@ -21,7 +21,7 @@ public class ImageFullScreenActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_image_fullscreen);
+        setContentView(R.layout.activity_image_full_screen);
 
         String imageUrl = getIntent().getStringExtra(EXTRA_IMAGE_URL);
         ImageView ivFullScreen = findViewById(R.id.ivFullScreen);
@@ -79,3 +79,4 @@ public class ImageFullScreenActivity extends AppCompatActivity {
         }).start();
     }
 }
+
