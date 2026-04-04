@@ -53,40 +53,48 @@
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
-                <LinearLayout
+                <TextView
+                    android:id="@+id/tvReviewedProduct"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="2dp"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal">
-                    <ImageView
-                        android:layout_width="14dp"
-                        android:layout_height="14dp"
-                        android:src="@android:drawable/ic_menu_gallery"
-                        app:tint="#5D3FD3" />
-                    <TextView
-                        android:id="@+id/tvReviewedProduct"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="4dp"
-                        android:text="Samsung Galaxy S24"
-                        android:textColor="#8B8B8B"
-                        android:textSize="12sp" />
-                </LinearLayout>
+                    android:text="Samsung Galaxy S24"
+                    android:textColor="#8B8B8B"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tvReviewMeta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="Store • Category"
+                    android:textColor="#8B8B8B"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tvReviewDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="Posted on Apr 03, 2026"
+                    android:textColor="#A0A0A0"
+                    android:textSize="12sp" />
             </LinearLayout>
 
-            <LinearLayout
+            <TextView
+                android:id="@+id/tvPostedByYou"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
-                android:orientation="horizontal">
-                <ImageView android:layout_width="14dp" android:layout_height="14dp" android:src="@android:drawable/btn_star_big_on" app:tint="#E6A23C" />
-                <ImageView android:layout_width="14dp" android:layout_height="14dp" android:src="@android:drawable/btn_star_big_on" app:tint="#E6A23C" />
-                <ImageView android:layout_width="14dp" android:layout_height="14dp" android:src="@android:drawable/btn_star_big_on" app:tint="#E6A23C" />
-                <ImageView android:layout_width="14dp" android:layout_height="14dp" android:src="@android:drawable/btn_star_big_on" app:tint="#E6A23C" />
-                <ImageView android:layout_width="14dp" android:layout_height="14dp" android:src="@android:drawable/btn_star_big_on" app:tint="#E6A23C" />
-            </LinearLayout>
+                android:background="#E6F4EA"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="6dp"
+                android:text="Posted by you"
+                android:textColor="#1D664D"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
         </RelativeLayout>
 
         <TextView
@@ -99,14 +107,6 @@
             android:textSize="15sp"
             android:lineSpacingExtra="4dp" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
-
-        </LinearLayout>
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>
