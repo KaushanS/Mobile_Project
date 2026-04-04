@@ -14,12 +14,12 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
 
         findViewById(R.id.btnGetStarted).setOnClickListener(v -> {
-            Intent intent = new Intent(this, LoginActivity.class);
+            Intent intent = new Intent(this, RegisterActivity.class);
             startActivity(intent);
         });
 
         findViewById(R.id.btnAlreadyHaveAccount).setOnClickListener(v -> {
-            Intent intent = new Intent(this, RegisterActivity.class);
+            Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);
         });
     }
