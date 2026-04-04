@@ -20,7 +20,7 @@
             android:textSize="36sp"
             android:textStyle="bold" />
 
-        <!-- Search -->
+        <!-- Search Bar -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="60dp"
@@ -47,13 +47,14 @@
                 android:textSize="16sp" />
         </LinearLayout>
 
-        <!-- Filter  -->
+        <!-- Filter Section -->
         <HorizontalScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:paddingHorizontal="24dp"
             android:scrollbars="none">
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -61,20 +62,22 @@
                 android:orientation="horizontal"
                 android:paddingBottom="4dp">
 
-                <!-- Select Category -->
+                <!-- Selected Categor -->
                 <LinearLayout
+                    android:id="@+id/filterAll"
                     android:layout_width="wrap_content"
                     android:layout_height="60dp"
+                    android:layout_marginEnd="12dp"
                     android:background="@drawable/category_selected_border"
                     android:gravity="center"
                     android:minWidth="80dp"
-                    android:paddingHorizontal="20dp"
-                    android:layout_marginEnd="12dp">
+                    android:paddingHorizontal="20dp">
                     <TextView
+                        android:id="@+id/tvFilterAll"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="All\n(12)"
                         android:gravity="center"
+                        android:text="All\n(0)"
                         android:textColor="#1D8E66"
                         android:textSize="15sp"
                         android:textStyle="bold" />
@@ -82,13 +85,14 @@
 
                 <!-- Electronics  -->
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/filterElectronics"
                     android:layout_width="wrap_content"
                     android:layout_height="60dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginVertical="2dp"
                     app:cardBackgroundColor="@color/white"
                     app:cardCornerRadius="16dp"
-                    app:cardElevation="4dp"
-                    android:layout_marginEnd="12dp"
-                    android:layout_marginVertical="2dp">
+                    app:cardElevation="4dp">
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
@@ -113,13 +117,14 @@
 
                 <!-- Appliances -->
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/filterAppliances"
                     android:layout_width="wrap_content"
                     android:layout_height="60dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginVertical="2dp"
                     app:cardBackgroundColor="@color/white"
                     app:cardCornerRadius="16dp"
-                    app:cardElevation="4dp"
-                    android:layout_marginEnd="12dp"
-                    android:layout_marginVertical="2dp">
+                    app:cardElevation="4dp">
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
@@ -144,13 +149,14 @@
 
                 <!-- Vehicle  -->
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/filterVehicle"
                     android:layout_width="wrap_content"
                     android:layout_height="60dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginVertical="2dp"
                     app:cardBackgroundColor="@color/white"
                     app:cardCornerRadius="16dp"
-                    app:cardElevation="4dp"
-                    android:layout_marginEnd="12dp"
-                    android:layout_marginVertical="2dp">
+                    app:cardElevation="4dp">
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
@@ -167,67 +173,6 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="8dp"
                             android:text="Vehicle"
-                            android:textColor="@color/black"
-                            android:textSize="15sp"
-                            android:textStyle="bold" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- Furniture  -->
-                <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="60dp"
-                    app:cardBackgroundColor="@color/white"
-                    app:cardCornerRadius="16dp"
-                    app:cardElevation="4dp"
-                    android:layout_marginEnd="12dp"
-                    android:layout_marginVertical="2dp">
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:paddingHorizontal="16dp"
-                        android:orientation="horizontal">
-                        <ImageView
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
-                            android:src="@android:drawable/ic_menu_agenda"
-                            app:tint="#795548" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="8dp"
-                            android:text="Furniture"
-                            android:textColor="@color/black"
-                            android:textSize="15sp"
-                            android:textStyle="bold" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- Others  -->
-                <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="60dp"
-                    app:cardBackgroundColor="@color/white"
-                    app:cardCornerRadius="16dp"
-                    app:cardElevation="4dp"
-                    android:layout_marginVertical="2dp">
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:paddingHorizontal="16dp"
-                        android:orientation="horizontal">
-                        <ImageView
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
-                            android:src="@android:drawable/ic_menu_help"
-                            app:tint="#95A5A6" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="8dp"
-                            android:text="Others"
                             android:textColor="@color/black"
                             android:textSize="15sp"
                             android:textStyle="bold" />
@@ -262,9 +207,18 @@
                 app:tint="#BDBDBD" />
         </LinearLayout>
 
+        <!-- Warranty List -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvWarranties"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="12dp"
+            android:clipToPadding="false"
+            android:paddingBottom="100dp"
+            android:paddingHorizontal="24dp" />
     </LinearLayout>
 
-
+    <!-- Navigation-->
     <include
         android:id="@+id/layout_bottom_nav"
         layout="@layout/layout_bottom_nav"

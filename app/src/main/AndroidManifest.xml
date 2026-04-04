@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WarranyManagement">
         <activity
+            android:name=".warranty.ImageFullScreenActivity"
+            android:exported="false" />
+        <activity
             android:name=".auth.EmailVerificationWaitingActivity"
             android:exported="false" />
         <activity
