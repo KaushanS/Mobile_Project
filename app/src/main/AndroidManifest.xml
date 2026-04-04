@@ -11,33 +11,66 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.WarranyManagement">
-
+        <activity
+            android:name=".auth.EmailVerificationWaitingActivity"
+            android:exported="false" />
         <activity
             android:name=".splash.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".auth.LoginActivity" android:exported="false" />
-        <activity android:name=".auth.RegisterActivity" android:exported="false" />
-        <activity android:name=".auth.ForgotPasswordActivity" android:exported="false" />
-        <activity android:name=".auth.ResetEmailSentActivity" android:exported="false" />
-        <activity android:name=".home.HomeActivity" android:exported="false" />
-        <activity android:name=".warranty.AddWarrantyActivity" android:exported="false" />
-        <activity android:name=".warranty.WarrantyListActivity" android:exported="false" />
-        <activity android:name=".warranty.WarrantyDetailActivity" android:exported="false" />
-        <activity android:name=".warranty.EditWarrantyActivity" android:exported="false" />
-        <activity android:name=".community.CommunityActivity" android:exported="false" />
-        <activity android:name=".community.WriteReviewActivity" android:exported="false" />
-        <activity android:name=".profile.ProfileActivity" android:exported="false" />
-        <activity android:name=".profile.EditProfileActivity" android:exported="false" />
-        <activity android:name=".profile.ChangePasswordActivity" android:exported="false" />
-        <activity android:name=".settings.SettingsActivity" android:exported="false" />
-        <activity android:name=".notifications.NotificationsActivity" android:exported="false" />
-
+        <activity
+            android:name=".auth.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".auth.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".auth.ForgotPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".auth.ResetEmailSentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".home.HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".warranty.AddWarrantyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".warranty.WarrantyListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".warranty.WarrantyDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".warranty.EditWarrantyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".community.CommunityActivity"
+            android:exported="false" />
+        <activity
+            android:name=".community.WriteReviewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".profile.ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".profile.EditProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".profile.ChangePasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".settings.SettingsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".notifications.NotificationsActivity"
+            android:exported="false" />
     </application>
 
 </manifest>
