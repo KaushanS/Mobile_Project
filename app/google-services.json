@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "546310989080",
+    "project_id": "warranty-safe-a1784",
+    "storage_bucket": "warranty-safe-a1784.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:546310989080:android:b282a1a31bd16fe51dea6d",
+        "android_client_info": {
+          "package_name": "com.example.warranymanagement"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "546310989080-k7fjcss3epvtfot8gvmpu94ikbpa593g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.warranymanagement",
+            "certificate_hash": "924e181125a1534366a57b7946c4054319736c23"
+          }
+        },
+        {
+          "client_id": "546310989080-95b2adj46ea1sg2a3qno1f4cn6u6tcqr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChW8SpwIvnxShBzadiiMkCVqA3uj5MP2U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "546310989080-95b2adj46ea1sg2a3qno1f4cn6u6tcqr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
