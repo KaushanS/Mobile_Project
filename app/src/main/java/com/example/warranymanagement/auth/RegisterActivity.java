@@ -24,7 +24,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-        // Update these ids if your XML uses different names
+
         etName = findViewById(R.id.CreateAccountFullName);
         etEmail = findViewById(R.id.CreateAccountEmail);
         etPassword = findViewById(R.id.CreateAccountPassword);
@@ -34,7 +34,6 @@ public class RegisterActivity extends AppCompatActivity {
 
 
         findViewById(R.id.btnGoogleSignIn).setOnClickListener(v -> {
-            // keep your Google flow here later
             startActivity(new Intent(this, LoginActivity.class));
             finishAffinity();
         });

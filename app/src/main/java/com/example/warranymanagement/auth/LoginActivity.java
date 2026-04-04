@@ -27,7 +27,6 @@ public class LoginActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-        // Make sure these IDs match your activity_login.xml
         etEmail = findViewById(R.id.LoginEmail);
         etPassword = findViewById(R.id.LoginPassword);
 
@@ -53,7 +52,6 @@ public class LoginActivity extends AppCompatActivity {
         String email = etEmail.getText().toString().trim();
         String password = etPassword.getText().toString().trim();
 
-        // Clear previous field errors
         etEmail.setError(null);
         etPassword.setError(null);
 
@@ -87,7 +85,7 @@ public class LoginActivity extends AppCompatActivity {
                         Exception ex = task.getException();
 
                         if (ex instanceof FirebaseAuthInvalidUserException) {
-                            // Email does not exist
+
                             etEmail.setError("Gmail is incorrect");
                             etEmail.requestFocus();
                         } else if (ex instanceof FirebaseAuthInvalidCredentialsException) {
@@ -100,7 +98,6 @@ public class LoginActivity extends AppCompatActivity {
                                 etPassword.setError("Password is incorrect");
                                 etPassword.requestFocus();
                             } else {
-                                // Fallback for credentials-related errors
                                 etPassword.setError("Password is incorrect");
                                 etPassword.requestFocus();
                             }
