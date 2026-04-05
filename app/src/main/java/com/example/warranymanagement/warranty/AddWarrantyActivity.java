@@ -47,6 +47,7 @@ public class AddWarrantyActivity extends AppCompatActivity {
     private TextView tvWarrantyPeriodValue;
     private EditText etProductName;
     private EditText etStoreName;
+    private EditText etLocation;
     private AutoCompleteTextView actWarrantyPeriod;
     private AutoCompleteTextView actCategory;
     private ImageView ivWarrantyPhoto;
@@ -83,6 +84,7 @@ public class AddWarrantyActivity extends AppCompatActivity {
 
         etProductName = findViewById(R.id.etProductName);
         etStoreName = findViewById(R.id.etStoreName);
+        etLocation = findViewById(R.id.etLocation);
         tvPurchaseDate = findViewById(R.id.tvPurchaseDate);
         tvExpiryDate = findViewById(R.id.tvExpiryDate);
         tvWarrantyPeriodValue = findViewById(R.id.tvWarrantyPeriodValue);
@@ -273,12 +275,14 @@ public class AddWarrantyActivity extends AppCompatActivity {
         }).start();
     }
 
+    @SuppressWarnings("SameParameterValue")
     private void writeTextPart(OutputStream os, String boundary, String name, String value) throws Exception {
         os.write(("--" + boundary + "\r\n").getBytes());
         os.write(("Content-Disposition: form-data; name=\"" + name + "\"\r\n\r\n").getBytes());
         os.write((value + "\r\n").getBytes());
     }
 
+    @SuppressWarnings("SameParameterValue")
     private void writeFilePart(OutputStream os, String boundary, String fieldName, String fileName, Uri fileUri) throws Exception {
         os.write(("--" + boundary + "\r\n").getBytes());
         os.write(("Content-Disposition: form-data; name=\"" + fieldName + "\"; filename=\"" + fileName + "\"\r\n").getBytes());
@@ -316,10 +320,12 @@ public class AddWarrantyActivity extends AppCompatActivity {
 
         String productName = etProductName.getText().toString().trim();
         String storeName = etStoreName.getText().toString().trim();
+        String location = etLocation.getText().toString().trim();
 
         Map<String, Object> warranty = new HashMap<>();
         warranty.put("productName", productName);
         warranty.put("storeName", storeName);
+        warranty.put("location", location);
         warranty.put("category", selectedCategory);
         warranty.put("warrantyPeriod", selectedWarrantyPeriod);
         warranty.put("purchaseDate", isoFmt.format(selectedPurchaseCal.getTime()));
