@@ -5,6 +5,7 @@ import android.text.TextUtils;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
+import android.widget.RatingBar;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,6 +30,7 @@ public class WriteReviewActivity extends AppCompatActivity {
     private EditText etReviewStoreName;
     private EditText etReviewText;
     private AutoCompleteTextView actCategory;
+    private RatingBar ratingBar;
 
     private String selectedCategory = "Electronics";
 
@@ -45,6 +47,10 @@ public class WriteReviewActivity extends AppCompatActivity {
         etReviewStoreName = findViewById(R.id.etReviewStoreName);
         etReviewText = findViewById(R.id.etReviewText);
         actCategory = findViewById(R.id.actCategory);
+        ratingBar = findViewById(R.id.ratingBar);
+        if (ratingBar != null) {
+            ratingBar.setIsIndicator(false);
+        }
 
         setupCategoryDropdown();
         findViewById(R.id.btnPostReview).setOnClickListener(v -> publishOrUpdateReview());
@@ -81,7 +87,13 @@ public class WriteReviewActivity extends AppCompatActivity {
                         etReviewText.setText(doc.getString("reviewText"));
                         selectedCategory = doc.getString("category") != null ? doc.getString("category") : selectedCategory;
                         actCategory.setText(selectedCategory, false);
-                        ((android.widget.Button) findViewById(R.id.btnPostReview)).setText("Update Review");
+
+                        Double rating = doc.getDouble("rating");
+                        if (rating != null) {
+                            ratingBar.setRating(rating.floatValue());
+                        }
+
+                        ((android.widget.Button) findViewById(R.id.btnPostReview)).setText(R.string.btn_update_review);
                     } else {
                         Toast.makeText(this, "You can only edit your own review", Toast.LENGTH_SHORT).show();
                         finish();
@@ -98,6 +110,7 @@ public class WriteReviewActivity extends AppCompatActivity {
         String productName = etReviewProductName == null ? "" : etReviewProductName.getText().toString().trim();
         String storeName = etReviewStoreName == null ? "" : etReviewStoreName.getText().toString().trim();
         String reviewText = etReviewText == null ? "" : etReviewText.getText().toString().trim();
+        float rating = ratingBar != null ? ratingBar.getRating() : 0;
 
         if (TextUtils.isEmpty(productName)) {
             etReviewProductName.setError("Product name is required");
@@ -111,6 +124,11 @@ public class WriteReviewActivity extends AppCompatActivity {
             return;
         }
 
+        if (rating == 0) {
+            Toast.makeText(this, "Please provide a rating", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         Map<String, Object> review = new HashMap<>();
         review.put("userId", currentUser.getUid());
         review.put("userName", currentUser.getDisplayName() != null ? currentUser.getDisplayName() : currentUser.getEmail());
@@ -118,6 +136,7 @@ public class WriteReviewActivity extends AppCompatActivity {
         review.put("storeName", storeName);
         review.put("category", selectedCategory);
         review.put("reviewText", reviewText);
+        review.put("rating", rating);
         review.put("createdAt", FieldValue.serverTimestamp());
 
         if (!TextUtils.isEmpty(reviewId)) {

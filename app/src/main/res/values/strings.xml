@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">WarranyManagement</string>
+    <string name="btn_update_review">Update Review</string>
 </resources>
