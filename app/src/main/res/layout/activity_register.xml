@@ -168,6 +168,39 @@
                 android:textSize="16sp" />
         </LinearLayout>
 
+        <!-- Nic number -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="ENTER NIC NUMBER"
+            android:textColor="#A0A0A0"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/edit_text_background"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="16dp">
+
+
+            <EditText
+                android:id="@+id/CreateAccountNic"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="12dp"
+                android:background="@android:color/transparent"
+                android:hint="Enter NIC Number"
+                android:inputType="text"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+
+
         <!-- Register Button -->
         <Button
             android:id="@+id/btnRegister"
